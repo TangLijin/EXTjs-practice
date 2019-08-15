@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./ext-all.css" />
+    <script type="text/javascript" src="./ext-base.js"></script>
+    <script type="text/javascript" src="./ext-all.js"></script>
+    <title>BingMock</title>
+</head>
+<script>
+    Ext.onReady(function() {
+            var tabPanel = new Ext.TabPanel({
+                renderTo: document.body,
+                height: 55,
+                width: 520,
+
+                border: true,
+            });
+            tabPanel.add({
+                title: '国内版',
+                // html: '国内版-----'
+            });
+            tabPanel.add({
+                title: '国际版',
+                // html: '国际版------'
+            });
+            tabPanel.activate(0);
+
+            var wrapper = new Ext.Container({
+                    renderTo: 'searchBox',
+                    layout: 'column',
+                    layoutConfig: {
+                        columns: 4
+                    },
+                    defaults: {
+
+                        xtype: 'container',
+                        autoEl: 'div',
+                        layout: 'fix',
+
+                        columnWidth: 0.5,
+                        style: {
+                            padding: '10px'
+                        }
+                    },
+
+                    items: [{
+                        column: 1,
+                        autoEl: {
+                            tag: 'img',
+                            src: './img/bing.png',
+                            height: 35
+                        }
+                    }, {
+                        tabPanel,
+                        width: 90
+                    }, {
+                        column: 1,
+
+                        autoEl: {
+                            tag: 'img',
+                            src: './img/search.png',
+                            height: 35
+                        }
+
+                    }]
+
+                })
+                // var tabPanel = new Ext.TabPanel({
+                //     renderTo: document.body,
+                //     height: 55,
+                //     // weight: 100,
+                //     autoWidth: true,
+                //     border: true,
+                // });
+                // tabPanel.add({
+                //     title: '国内版',
+                //     // html: '国内版-----'
+                // });
+                // tabPanel.add({
+                //     title: '国际版',
+                //     // html: '国际版------'
+                // });
+                // tabPanel.activate(0);
+        })
+        // tabPanel.render();
+</script>
+
+
+<body style="background-image: url(./img/bingSearch.jpg)">
+    <div id="searchBox"></div>
+</body>
+
+</html>
